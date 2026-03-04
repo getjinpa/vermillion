@@ -157,13 +157,13 @@ const categories = ["All", "Thangka", "Sculpture", "Textile", "Calligraphy"];
             <button
               class="gallery-item-btn"
               aria-label={`View: ${work.title} by ${work.artist}`}
-              data-lightbox-src={work.image}
+              data-lightbox-src={withBase(work.image)}
               data-lightbox-title={work.title}
               data-lightbox-artist={work.artist}
             >
               <img
                 class="gallery-item-image"
-                src={work.image}
+                src={withBase(work.image)}
                 alt={work.alt}
                 loading="lazy"
               />

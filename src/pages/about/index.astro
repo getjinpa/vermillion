@@ -130,7 +130,7 @@ const partners = [
 
         <div class="mission-image">
           <img
-            src="/images/photo-1506905925346-21bda4d32df4.jpg"
+            src={withBase('/images/photo-1506905925346-21bda4d32df4.jpg')}
             alt="Mountain view of Dharamsala and the Kangra valley from McLeod Ganj"
             loading="lazy"
             width="700"
@@ -228,7 +228,7 @@ const partners = [
           <div class="team-card">
             <div class="team-portrait">
               <img
-                src={member.image}
+                src={withBase(member.image)}
                 alt={member.alt}
                 loading="lazy"
                 width="200"
