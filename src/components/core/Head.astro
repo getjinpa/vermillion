@@ -1,0 +1,58 @@
+---
+import { withBase } from '../../utils/paths';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  siteConfig: any;
+}
+
+const { title, description, image, type = 'website', siteConfig } = Astro.props;
+
+const siteTitle = siteConfig.site.title as string;
+const siteDesc  = siteConfig.site.description as string;
+const siteUrl   = (siteConfig.site.url as string).replace(/\/$/, '');
+
+const pageTitle = title ? `${title} — ${siteTitle}` : `${siteTitle} — Tibetan Traditional Arts School`;
+const pageDesc  = description || siteDesc;
+const ogImage   = image || `${siteUrl}${withBase('/images/og-default.jpg')}`;
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+---
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+
+<title>{pageTitle}</title>
+<meta name="description" content={pageDesc} />
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
+
+<!-- Google Fonts: Raleway + Merriweather -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap"
+  rel="stylesheet"
+/>
+
+<!-- Open Graph -->
+<meta property="og:type"        content={type} />
+<meta property="og:title"       content={pageTitle} />
+<meta property="og:description" content={pageDesc} />
+<meta property="og:image"       content={ogImage} />
+<meta property="og:url"         content={canonicalUrl} />
+<meta property="og:site_name"   content={siteTitle} />
+<meta property="og:locale"      content="en_US" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card"        content="summary_large_image" />
+<meta name="twitter:title"       content={pageTitle} />
+<meta name="twitter:description" content={pageDesc} />
+<meta name="twitter:image"       content={ogImage} />
+
+<!-- Theme color -->
+<meta name="theme-color" content="#1A1F4E" />

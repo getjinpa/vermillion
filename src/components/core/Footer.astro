@@ -1,0 +1,100 @@
+---
+import { withBase } from '../../utils/paths';
+
+interface Props { siteConfig: any; }
+const { siteConfig } = Astro.props;
+
+const year = new Date().getFullYear();
+const contact = siteConfig.contact ?? {};
+---
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+
+    <div class="footer-main">
+
+      <!-- Brand column -->
+      <div class="footer-brand">
+        <a href={withBase('/')} class="footer-logo" aria-label="Vermillion Arts home">
+          <div class="footer-logo-mark" aria-hidden="true">V</div>
+          <div>
+            <span class="footer-logo-text">Vermillion Arts</span>
+            <span class="footer-logo-sub">Dharamsala · Est. 2008</span>
+          </div>
+        </a>
+        <p class="footer-tagline">
+          Preserving Tibet's living art traditions through teaching, exhibition, and community.
+        </p>
+        <div class="footer-social" aria-label="Social media links">
+          <a href="#" class="social-link" aria-label="Instagram">IG</a>
+          <a href="#" class="social-link" aria-label="Facebook">FB</a>
+          <a href="#" class="social-link" aria-label="YouTube">YT</a>
+          <a href="#" class="social-link" aria-label="Twitter / X">X</a>
+        </div>
+      </div>
+
+      <!-- Explore column -->
+      <div>
+        <p class="footer-col-title">Explore</p>
+        <nav class="footer-links" aria-label="Footer explore navigation">
+          <a href={withBase('/gallery/')} class="footer-link">Gallery</a>
+          <a href={withBase('/classes/')} class="footer-link">Classes</a>
+          <a href={withBase('/artists/')} class="footer-link">Artists</a>
+          <a href={withBase('/about/')} class="footer-link">About Us</a>
+          <a href={withBase('/contact/')} class="footer-link">Contact</a>
+        </nav>
+      </div>
+
+      <!-- Programs column -->
+      <div>
+        <p class="footer-col-title">Programs</p>
+        <nav class="footer-links" aria-label="Footer programs navigation">
+          <a href={withBase('/classes/')} class="footer-link">Thangka Painting</a>
+          <a href={withBase('/classes/')} class="footer-link">Buddhist Sculpture</a>
+          <a href={withBase('/classes/')} class="footer-link">Tibetan Calligraphy</a>
+          <a href={withBase('/classes/')} class="footer-link">Traditional Weaving</a>
+          <a href={withBase('/classes/')} class="footer-link">Gilding Techniques</a>
+        </nav>
+      </div>
+
+      <!-- Contact column -->
+      <div>
+        <p class="footer-col-title">Visit Us</p>
+        <address class="footer-contact" style="font-style:normal;">
+          {contact.address && (
+            <p class="footer-contact-item">{contact.address}</p>
+          )}
+          {contact.phone && (
+            <p class="footer-contact-item">
+              <a href={`tel:${contact.phone}`}>{contact.phone}</a>
+            </p>
+          )}
+          {contact.email && (
+            <p class="footer-contact-item">
+              <a href={`mailto:${contact.email}`}>{contact.email}</a>
+            </p>
+          )}
+          <p class="footer-contact-item">
+            Mon–Sat: 9am – 6pm IST<br />
+            Sunday: Closed
+          </p>
+        </address>
+      </div>
+
+    </div>
+
+    <hr class="footer-divider" />
+
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        &copy; {year} Vermillion Arts. Fictional template for demonstration purposes.
+      </p>
+      <p class="footer-built">
+        Built with <a href="https://getjinpa.com" target="_blank" rel="noopener noreferrer">Jinpa</a>
+        &nbsp;·&nbsp;
+        Powered by <a href="https://astro.build" target="_blank" rel="noopener noreferrer">Astro</a>
+      </p>
+    </div>
+
+  </div>
+</footer>

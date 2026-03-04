@@ -1,0 +1,304 @@
+---
+import Base from '../../layouts/Base.astro';
+import { withBase } from '../../utils/paths';
+
+const classes = [
+  {
+    id: 1,
+    title: "Thangka Painting — Introduction",
+    teacher: "Tenzin Norbu",
+    level: "Beginner",
+    levelClass: "level-beginner",
+    duration: "8 weeks",
+    schedule: "Tue & Thu, 9am–12pm",
+    price: "₹14,000",
+    perSession: "per course",
+    description: "A comprehensive introduction to the sacred art of Tibetan scroll painting. Students learn to prepare a traditional cotton canvas, sketch the basic proportions of a Buddhist figure using the iconometric grid, mix and apply mineral pigments, and outline completed sections in black ink. No prior art experience required — only patience and dedication.",
+    tags: ["Natural pigments", "Canvas preparation", "Iconometric grid", "Outlining"]
+  },
+  {
+    id: 2,
+    title: "Advanced Thangka — Karma Gadri Style",
+    teacher: "Tenzin Norbu",
+    level: "Advanced",
+    levelClass: "level-advanced",
+    duration: "6 months",
+    schedule: "Mon–Fri, 9am–1pm",
+    price: "₹72,000",
+    perSession: "per term",
+    description: "An intensive study of the Karma Gadri tradition as transmitted from Lhasa monastery lineages. Covers complex multi-deity compositions, full gold work, brocade border design, and the consecration ritual. Prerequisites: completion of Introduction course or portfolio review. Class size limited to six students.",
+    tags: ["Karma Gadri lineage", "Gold techniques", "Multi-deity compositions", "Consecration ritual"]
+  },
+  {
+    id: 3,
+    title: "Buddhist Sculpture — Lost-Wax Bronze Casting",
+    teacher: "Sonam Rinchen",
+    level: "All Levels",
+    levelClass: "level-all",
+    duration: "10 weeks",
+    schedule: "Sat & Sun, 10am–4pm",
+    price: "₹18,000",
+    perSession: "per course",
+    description: "Explore the ancient Tibetan-Newar tradition of cire perdue (lost-wax) bronze casting. Students model a clay prototype of a Buddhist figure, create a wax version, and work through the full casting and finishing process. Special focus on iconometric measurement according to the Pratimāmāna system. Materials included.",
+    tags: ["Clay modelling", "Lost-wax casting", "Iconometric measurement", "Cold-gilding"]
+  },
+  {
+    id: 4,
+    title: "Tibetan Calligraphy — Uchen & Umé Scripts",
+    teacher: "Rigzin Choedon",
+    level: "Beginner",
+    levelClass: "level-beginner",
+    duration: "6 weeks",
+    schedule: "Wednesdays, 10am–1pm",
+    price: "₹9,500",
+    perSession: "per course",
+    description: "Begin with the formal Uchen (block) script before moving to the flowing Umé (cursive) style. Students practice on handmade lokta paper using traditional bamboo-nib pens and hand-ground ink. The course culminates in each student producing a short prayer text suitable for framing or offering.",
+    tags: ["Uchen script", "Umé script", "Traditional tools", "Lokta paper"]
+  },
+  {
+    id: 5,
+    title: "Traditional Himalayan Weaving",
+    teacher: "Pema Dolkar",
+    level: "Beginner",
+    levelClass: "level-beginner",
+    duration: "8 weeks",
+    schedule: "Mon & Wed, 2pm–5pm",
+    price: "₹11,000",
+    perSession: "per course",
+    description: "Learn back-strap and frame loom weaving in the Tibetan tradition, producing the geometric patterns found in traditional dress fabric, khata scarves, and decorative panels. Students work with naturally-dyed wool and silk, and leave with a completed woven piece of their own. Materials fee included.",
+    tags: ["Back-strap loom", "Natural dyes", "Geometric patterns", "Wool & silk"]
+  },
+  {
+    id: 6,
+    title: "Appliqué Thangka Construction",
+    teacher: "Pema Dolkar",
+    level: "Intermediate",
+    levelClass: "level-intermediate",
+    duration: "10 weeks",
+    schedule: "Fri, 10am–4pm",
+    price: "₹15,500",
+    perSession: "per course",
+    description: "Appliqué thangkas use cut silk and brocade fabric rather than paint to build up sacred images layer by layer. Students learn to select and combine fabrics, cut precise shapes, and compose a complete composition. The tradition is associated with great festivals and monastery ceremonies. Prerequisites: basic sewing skills.",
+    tags: ["Silk & brocade", "Appliqué technique", "Compositional design", "Festival art"]
+  },
+  {
+    id: 7,
+    title: "Gilding & Gold Techniques",
+    teacher: "Tenzin Norbu",
+    level: "Intermediate",
+    levelClass: "level-intermediate",
+    duration: "4 weeks (intensive)",
+    schedule: "Tue–Fri, 9am–12pm",
+    price: "₹12,000",
+    perSession: "per intensive",
+    description: "Gold is the lifeblood of classical Tibetan sacred art. This focused workshop covers shell gold preparation, solid gold application, stippling and burnishing, gold outlining (sertri), and the patterns used in different regional styles. Suitable for thangka painters seeking to add gold work to their practice.",
+    tags: ["Shell gold preparation", "Sertri outlining", "Burnishing", "Gold stippling"]
+  },
+  {
+    id: 8,
+    title: "History & Iconography of Tibetan Art",
+    teacher: "Dr. Karma Phuntsok",
+    level: "All Levels",
+    levelClass: "level-all",
+    duration: "12 weeks",
+    schedule: "Thursdays, 6pm–8pm",
+    price: "₹8,000",
+    perSession: "per course",
+    description: "A scholarly survey of Tibetan art history from the Imperial period to the present exile community, covering major lineages, regional styles, iconographic systems, and the role of art in Tibetan Buddhism. Lecture and seminar format with illustrated slide presentations and field visits to Dharamsala's museums.",
+    tags: ["Art history", "Iconography", "Buddhist symbolism", "Lecture format"]
+  }
+];
+
+const workshops = [
+  {
+    day: "22",
+    month: "Mar",
+    year: "2026",
+    title: "Introduction to Thangka Pigments",
+    teacher: "Tenzin Norbu",
+    duration: "1 day (9am–5pm)",
+    price: "₹2,500",
+    spots: "4 spots remaining"
+  },
+  {
+    day: "5",
+    month: "Apr",
+    year: "2026",
+    title: "Gilding the Lotus: Gold in Tibetan Art",
+    teacher: "Tenzin Norbu",
+    duration: "2 days (Sat–Sun)",
+    price: "₹4,800",
+    spots: "6 spots remaining"
+  },
+  {
+    day: "19",
+    month: "Apr",
+    year: "2026",
+    title: "Natural Dye Workshop",
+    teacher: "Pema Dolkar",
+    duration: "1 day (10am–4pm)",
+    price: "₹1,800",
+    spots: "Full — join waitlist"
+  }
+];
+---
+
+<Base
+  title="Classes"
+  description="Vermillion Arts classes in Dharamsala — thangka painting, Buddhist sculpture, Tibetan calligraphy, traditional weaving, appliqué, gilding, and art history."
+>
+
+  <!-- Page Hero -->
+  <section class="page-hero" aria-label="Classes page header">
+    <div class="page-hero-ornament" aria-hidden="true"></div>
+    <div class="container">
+      <p class="page-hero-eyebrow">Study With Us</p>
+      <h1 class="page-hero-title">Classes & Workshops</h1>
+      <p class="page-hero-desc">
+        Structured courses and short workshops taught by master artists with
+        decades of practice. Study in Dharamsala with techniques passed down
+        through unbroken lineages.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- Classes -->
+  <section class="section" aria-labelledby="classes-heading">
+    <div class="container">
+
+      <header class="section-header">
+        <p class="section-eyebrow no-lines">Current Intake</p>
+        <h2 class="section-title" id="classes-heading">Regular Classes</h2>
+        <div class="section-divider"></div>
+        <p class="section-description">
+          All classes run in small groups — maximum 8–12 students — to ensure
+          personalised attention from the teacher. Enrolment opens quarterly.
+        </p>
+      </header>
+
+      <div class="classes-grid">
+        {classes.map(cls => (
+          <article class="class-card">
+            <div class="class-card-header">
+              <div class="class-card-title-group">
+                <h3 class="class-card-title">{cls.title}</h3>
+                <p class="class-card-teacher">with {cls.teacher}</p>
+              </div>
+              <span class={`level-badge ${cls.levelClass}`}>{cls.level}</span>
+            </div>
+
+            <div class="class-card-body">
+              <p class="class-card-desc">{cls.description}</p>
+
+              <div class="class-meta-grid">
+                <div class="class-meta-item">
+                  <span class="class-meta-label">Duration</span>
+                  <span class="class-meta-value">{cls.duration}</span>
+                </div>
+                <div class="class-meta-item">
+                  <span class="class-meta-label">Schedule</span>
+                  <span class="class-meta-value">{cls.schedule}</span>
+                </div>
+              </div>
+
+              <div class="class-tags" style="display:flex;flex-wrap:wrap;gap:0.375rem;">
+                {cls.tags.map(tag => (
+                  <span class="artist-tag">{tag}</span>
+                ))}
+              </div>
+            </div>
+
+            <div class="class-card-footer">
+              <div class="class-price">
+                {cls.price} <span>{cls.perSession}</span>
+              </div>
+              <a href={withBase('/contact/')} class="btn btn-outline btn-sm">
+                Enquire
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Upcoming Workshops -->
+  <section class="section" style="background: var(--ivory);" aria-labelledby="workshops-heading">
+    <div class="container">
+
+      <header class="section-header">
+        <p class="section-eyebrow no-lines">One-Time Events</p>
+        <h2 class="section-title" id="workshops-heading">Upcoming Workshops</h2>
+        <div class="section-divider"></div>
+        <p class="section-description">
+          Short intensive workshops are perfect for visitors to Dharamsala and students
+          who want a focused experience without committing to a full course.
+        </p>
+      </header>
+
+      <div class="workshops-grid">
+        {workshops.map(ws => (
+          <article class="workshop-card">
+            <div class="workshop-date-bar">
+              <div class="workshop-date-big">{ws.day}</div>
+              <div class="workshop-date-detail">
+                {ws.month} {ws.year}<br />
+                {ws.duration}
+              </div>
+            </div>
+            <div class="workshop-body">
+              <h3 class="workshop-title">{ws.title}</h3>
+              <p class="workshop-meta">
+                With {ws.teacher}<br />
+                {ws.price} per participant
+              </p>
+              <p class="workshop-spots">{ws.spots}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Practical info -->
+  <section class="section-sm" aria-label="Practical information">
+    <div class="container">
+      <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:var(--space-xl);">
+        <div>
+          <h3 class="text-h3" style="margin-bottom:var(--space-sm); color:var(--vermillion);">Materials</h3>
+          <p style="font-size:0.9rem; color:var(--muted); line-height:1.7; max-width:none;">
+            All specialist materials (mineral pigments, lokta paper, bamboo pens, canvases, bronze clay)
+            are sourced by Vermillion Arts. Course fees include materials unless otherwise stated.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-h3" style="margin-bottom:var(--space-sm); color:var(--vermillion);">Accommodation</h3>
+          <p style="font-size:0.9rem; color:var(--muted); line-height:1.7; max-width:none;">
+            McLeod Ganj has excellent guesthouses and long-stay hostels within walking distance
+            of the school. We can suggest suitable options for students from out of town or abroad.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-h3" style="margin-bottom:var(--space-sm); color:var(--vermillion);">Enrolment</h3>
+          <p style="font-size:0.9rem; color:var(--muted); line-height:1.7; max-width:none;">
+            Contact us by email or phone to reserve your place. A 30% deposit holds your spot.
+            Full fees are due one week before the course starts. Cancellations within 14 days
+            are non-refundable.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+@media (max-width: 700px) {
+  .practical-grid { grid-template-columns: 1fr !important; }
+}
+</style>

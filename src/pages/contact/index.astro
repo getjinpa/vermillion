@@ -1,0 +1,301 @@
+---
+import Base from '../../layouts/Base.astro';
+import { withBase } from '../../utils/paths';
+---
+
+<Base
+  title="Contact"
+  description="Contact Vermillion Arts in Dharamsala — class enrolment, gallery enquiries, commissions, and visiting information. Find us on Jogiwara Road, McLeod Ganj."
+>
+
+  <!-- Page Hero -->
+  <section class="page-hero" aria-label="Contact page header">
+    <div class="page-hero-ornament" aria-hidden="true"></div>
+    <div class="container">
+      <p class="page-hero-eyebrow">Get in Touch</p>
+      <h1 class="page-hero-title">Contact Us</h1>
+      <p class="page-hero-desc">
+        We welcome enquiries about classes, commissions, gallery visits, residencies,
+        and general information about Tibetan arts. We aim to reply within two working days.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- Contact main -->
+  <section class="section" aria-labelledby="contact-heading">
+    <div class="container">
+      <h2 class="visually-hidden" id="contact-heading">Contact Information and Form</h2>
+
+      <div class="contact-grid">
+
+        <!-- Left: info -->
+        <aside>
+
+          <div class="contact-info-block">
+            <h3 class="contact-info-title">Address</h3>
+            <p class="contact-info-text">
+              Vermillion Arts<br />
+              Jogiwara Road<br />
+              McLeod Ganj, Dharamsala 176219<br />
+              Himachal Pradesh, India
+            </p>
+          </div>
+
+          <div class="contact-info-block">
+            <h3 class="contact-info-title">Phone & Email</h3>
+            <p class="contact-info-text">
+              Phone: <a href="tel:+911892221345">+91 1892 221345</a><br />
+              WhatsApp: <a href="https://wa.me/911892221345" target="_blank" rel="noopener noreferrer">+91 1892 221345</a><br />
+              Email: <a href="mailto:hello@vermillionarts.org">hello@vermillionarts.org</a>
+            </p>
+          </div>
+
+          <div class="contact-info-block">
+            <h3 class="contact-info-title">Opening Hours</h3>
+            <table class="hours-table">
+              <tbody>
+                <tr>
+                  <td>Monday</td>
+                  <td>9:00am – 6:00pm</td>
+                </tr>
+                <tr>
+                  <td>Tuesday</td>
+                  <td>9:00am – 6:00pm</td>
+                </tr>
+                <tr>
+                  <td>Wednesday</td>
+                  <td>9:00am – 6:00pm</td>
+                </tr>
+                <tr>
+                  <td>Thursday</td>
+                  <td>9:00am – 8:00pm</td>
+                </tr>
+                <tr>
+                  <td>Friday</td>
+                  <td>9:00am – 6:00pm</td>
+                </tr>
+                <tr>
+                  <td>Saturday</td>
+                  <td>10:00am – 5:00pm<br /><small>(Open Studio day)</small></td>
+                </tr>
+                <tr>
+                  <td>Sunday</td>
+                  <td>Closed</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="contact-info-block">
+            <h3 class="contact-info-title">Getting Here</h3>
+            <p class="contact-info-text">
+              We are a 10-minute walk from the main McLeod Ganj bus stand.
+              From the square, walk down Jogiwara Road past the Tibetan Welfare Office —
+              look for the vermillion red door on your left. Taxis are readily available
+              from Dharamsala town (approximately ₹200–250).
+            </p>
+          </div>
+
+        </aside>
+
+        <!-- Right: form -->
+        <div>
+          <form class="contact-form" method="POST" action="#" novalidate aria-label="Contact form">
+            <h3 class="form-title">Send Us a Message</h3>
+            <p class="form-subtitle">
+              Whether you'd like to enrol in a class, enquire about a commission, or simply say
+              hello — we'd love to hear from you.
+            </p>
+
+            <div class="form-row">
+              <div class="form-group" style="margin-bottom:0;">
+                <label for="first-name">First Name <span aria-hidden="true" style="color:var(--vermillion);">*</span></label>
+                <input
+                  type="text"
+                  id="first-name"
+                  name="first_name"
+                  autocomplete="given-name"
+                  required
+                  placeholder="Tenzin"
+                />
+              </div>
+              <div class="form-group" style="margin-bottom:0;">
+                <label for="last-name">Last Name <span aria-hidden="true" style="color:var(--vermillion);">*</span></label>
+                <input
+                  type="text"
+                  id="last-name"
+                  name="last_name"
+                  autocomplete="family-name"
+                  required
+                  placeholder="Dorje"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address <span aria-hidden="true" style="color:var(--vermillion);">*</span></label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                required
+                placeholder="tenzin@example.com"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone / WhatsApp (optional)</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                autocomplete="tel"
+                placeholder="+91 98765 43210"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject <span aria-hidden="true" style="color:var(--vermillion);">*</span></label>
+              <select id="subject" name="subject" required>
+                <option value="" disabled selected>Select a topic…</option>
+                <option value="class-enquiry">Class Enrolment Enquiry</option>
+                <option value="workshop">Workshop Booking</option>
+                <option value="commission">Commission Enquiry</option>
+                <option value="residency">Artist Residency Application</option>
+                <option value="gallery">Gallery / Exhibition</option>
+                <option value="press">Press & Media</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message <span aria-hidden="true" style="color:var(--vermillion);">*</span></label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                placeholder="Tell us what brings you to Vermillion Arts, which class or programme you're interested in, and anything else that would help us respond helpfully…"
+                rows="6"
+              ></textarea>
+            </div>
+
+            <div class="form-group" style="margin-bottom:var(--space-xl);">
+              <label for="how-heard" style="text-transform:none; font-size:0.82rem; letter-spacing:0; font-weight:600; color:var(--muted);">
+                How did you hear about us? (optional)
+              </label>
+              <select id="how-heard" name="how_heard">
+                <option value="" selected>Choose an option…</option>
+                <option>Word of mouth</option>
+                <option>Search engine</option>
+                <option>Social media</option>
+                <option>Travel guidebook</option>
+                <option>Library of Tibetan Works & Archives</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
+              Send Message
+            </button>
+
+            <p style="font-size:0.78rem; color:var(--muted-light); text-align:center; margin-top:var(--space-md); max-width:none;">
+              We aim to reply within 2 working days. For urgent queries, please call us directly.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Map placeholder -->
+  <section class="section-sm" aria-label="Location map">
+    <div class="container">
+      <div class="map-placeholder">
+        <div class="map-pin">
+          <div class="map-pin-icon" aria-hidden="true">📍</div>
+          <p class="map-pin-label">
+            Vermillion Arts<br />
+            Jogiwara Road, McLeod Ganj<br />
+            Dharamsala 176219, India
+          </p>
+        </div>
+        <!-- Decorative grid lines to suggest a map -->
+        <svg
+          style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;"
+          aria-hidden="true"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <pattern id="map-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#786A60" stroke-width="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#map-grid)" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ strip -->
+  <section class="section-sm" style="background:var(--ivory);" aria-labelledby="faq-heading">
+    <div class="container">
+      <header class="section-header centered" style="margin-bottom:var(--space-xl);">
+        <p class="section-eyebrow">Frequently Asked</p>
+        <h2 class="section-title" id="faq-heading">Quick Answers</h2>
+        <div class="section-divider"></div>
+      </header>
+
+      <div style="display:grid; grid-template-columns: repeat(2,1fr); gap:var(--space-xl); max-width:900px; margin:0 auto;">
+        <div>
+          <h3 class="text-h3" style="margin-bottom:var(--space-sm); font-size:1rem;">Do I need prior experience for the classes?</h3>
+          <p style="font-size:0.9rem; line-height:1.7; color:var(--muted); max-width:none;">
+            Most of our introductory courses require no prior art experience, only motivation and patience.
+            The advanced thangka and gilding courses do require prior study; prerequisites are listed on each course page.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-h3" style="margin-bottom:var(--space-sm); font-size:1rem;">Can I attend as a tourist visiting Dharamsala?</h3>
+          <p style="font-size:0.9rem; line-height:1.7; color:var(--muted); max-width:none;">
+            Absolutely. Our Saturday Open Studio days and single-day workshops are designed with visitors in mind.
+            Contact us in advance to check availability, especially in peak season (March–June and September–November).
+          </p>
+        </div>
+        <div>
+          <h3 class="text-h3" style="margin-bottom:var(--space-sm); font-size:1rem;">Are artworks in the gallery for sale?</h3>
+          <p style="font-size:0.9rem; line-height:1.7; color:var(--muted); max-width:none;">
+            Selected works are available for purchase. Gallery pieces are priced from ₹8,000 for smaller studies
+            to ₹3,50,000 for major works. Contact us by email for a current price list.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-h3" style="margin-bottom:var(--space-sm); font-size:1rem;">Do you offer online classes?</h3>
+          <p style="font-size:0.9rem; line-height:1.7; color:var(--muted); max-width:none;">
+            We offer a limited number of online sessions for calligraphy and art history. Hands-on disciplines
+            like thangka painting, sculpture, and weaving are best learned in person; we believe deeply in the
+            student–teacher relationship as the core of transmission.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+  }
+  @media (max-width: 640px) {
+    .faq-grid { grid-template-columns: 1fr !important; }
+  }
+</style>

@@ -1,0 +1,299 @@
+---
+import Base from '../../layouts/Base.astro';
+import { withBase } from '../../utils/paths';
+
+const timeline = [
+  {
+    year: "2005",
+    title: "The Idea is Born",
+    desc: "Tenzin Norbu, working as a solo artist from a rented room in McLeod Ganj, begins hosting informal weekly painting sessions for young Tibetans and interested travellers. Word spreads quickly."
+  },
+  {
+    year: "2008",
+    title: "Vermillion Arts Founded",
+    desc: "With support from the Tibetan Cultural Heritage Foundation and three private donors, the school opens in its current Jogiwara Road location. The inaugural intake includes seven students. Sonam Rinchen joins from Kathmandu to establish the sculpture studio."
+  },
+  {
+    year: "2011",
+    title: "Gallery Opens to the Public",
+    desc: "The Vermillion Gallery is inaugurated with an exhibition of thangkas by Tenzin Norbu and Dechen Wangmo. Over 400 visitors attend the opening weekend. The gallery becomes a cultural anchor in McLeod Ganj."
+  },
+  {
+    year: "2014",
+    title: "Textile Arts Department Founded",
+    desc: "Pema Dolkar joins as Head of Textile Arts, establishing the weaving studio and appliqué thangka programme — the first structured teaching of these disciplines in the exile community."
+  },
+  {
+    year: "2017",
+    title: "International Residency Launched",
+    desc: "The artist residency programme begins with two inaugural residents from Germany and Japan. The exchange deepens Vermillion's international reach and brings fresh perspectives to the community."
+  },
+  {
+    year: "2020",
+    title: "Digital Archive Project",
+    desc: "A three-year project to photograph and document over 600 historical thangkas in monasteries and private collections across the exile community begins, building a freely accessible research archive."
+  },
+  {
+    year: "2024",
+    title: "Fifteen Years & 800 Graduates",
+    desc: "Vermillion Arts celebrates its fifteenth year with over 800 students having completed courses — from day-long workshops to year-long intensive programmes. The school's alumni practise on six continents."
+  }
+];
+
+const team = [
+  {
+    name: "Tenzin Norbu",
+    role: "Founding Director",
+    image: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=200&auto=format&fit=crop&q=80",
+    alt: "Tenzin Norbu, Founding Director"
+  },
+  {
+    name: "Dechen Wangmo",
+    role: "Senior Artist & Faculty",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&auto=format&fit=crop&q=80",
+    alt: "Dechen Wangmo, Senior Artist"
+  },
+  {
+    name: "Jigme Tsering",
+    role: "Administrative Director",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&auto=format&fit=crop&q=80",
+    alt: "Jigme Tsering, Administrative Director"
+  },
+  {
+    name: "Sonam Rinchen",
+    role: "Head of Sculpture",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&auto=format&fit=crop&q=80",
+    alt: "Sonam Rinchen, Head of Sculpture"
+  },
+  {
+    name: "Pema Dolkar",
+    role: "Head of Textile Arts",
+    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=200&auto=format&fit=crop&q=80",
+    alt: "Pema Dolkar, Head of Textile Arts"
+  },
+  {
+    name: "Rigzin Choedon",
+    role: "Calligraphy & Paper Arts",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&auto=format&fit=crop&q=80",
+    alt: "Rigzin Choedon, Calligraphy"
+  },
+  {
+    name: "Dr. Karma Phuntsok",
+    role: "Scholar in Residence",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&auto=format&fit=crop&q=80",
+    alt: "Dr. Karma Phuntsok, Scholar"
+  },
+  {
+    name: "Yangchen Lhamo",
+    role: "Gallery & Exhibitions",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&auto=format&fit=crop&q=80",
+    alt: "Yangchen Lhamo, Gallery Manager"
+  }
+];
+
+const partners = [
+  "Tibetan Cultural Heritage Foundation",
+  "Library of Tibetan Works & Archives",
+  "Tibetan Children's Village",
+  "Rubin Museum of Art, New York",
+  "Tibet Heritage Fund, London",
+  "Asia Cultural Council",
+  "Department of Education, CTA",
+  "Goethe-Institut New Delhi"
+];
+---
+
+<Base
+  title="About"
+  description="About Vermillion Arts — our mission, history, and team. A Tibetan traditional arts school in Dharamsala dedicated to preserving the living art traditions of Tibet."
+>
+
+  <!-- Page Hero -->
+  <section class="page-hero" aria-label="About page header">
+    <div class="page-hero-ornament" aria-hidden="true"></div>
+    <div class="container">
+      <p class="page-hero-eyebrow">Who We Are</p>
+      <h1 class="page-hero-title">About Vermillion Arts</h1>
+      <p class="page-hero-desc">
+        Founded in 2008 in the exile Tibetan community of Dharamsala, Vermillion Arts
+        exists to ensure that the sacred arts of Tibet remain alive, practised,
+        and freely transmissible.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- Mission -->
+  <section class="section" aria-labelledby="mission-heading">
+    <div class="container">
+      <div class="mission-grid">
+
+        <div class="mission-image">
+          <img
+            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&auto=format&fit=crop&q=80"
+            alt="Mountain view of Dharamsala and the Kangra valley from McLeod Ganj"
+            loading="lazy"
+            width="700"
+            height="525"
+          />
+        </div>
+
+        <div>
+          <header class="section-header">
+            <p class="section-eyebrow no-lines">Our Mission</p>
+            <h2 class="section-title" id="mission-heading">Art as Living Heritage</h2>
+            <div class="section-divider"></div>
+          </header>
+
+          <p style="font-size:1rem; line-height:1.85; color:var(--muted); margin-bottom:var(--space-lg); max-width:none;">
+            Tibetan traditional arts are not museum artefacts. They are living practices — breathing,
+            evolving, and inseparable from the spiritual and cultural life of the Tibetan people.
+            The displacement of Tibet's people since the 1950s has created an urgent imperative:
+            to ensure that these traditions are documented, taught, and actively practised wherever
+            Tibetans have made their homes.
+          </p>
+
+          <p style="font-size:1rem; line-height:1.85; color:var(--muted); margin-bottom:var(--space-xl); max-width:none;">
+            Vermillion Arts was founded on a simple conviction: that the best way to preserve an
+            art form is to teach it. We believe that when a student picks up a brush, a casting
+            tool, or a bamboo pen and learns to use it in the traditional way, they become — in
+            that moment — a living link in an unbroken chain stretching back hundreds of years.
+          </p>
+
+          <div class="mission-values">
+            <div class="value-item">
+              <h3 class="value-title">Authenticity</h3>
+              <p class="value-desc">All techniques follow lineage-authenticated methods, not simplified modern adaptations.</p>
+            </div>
+            <div class="value-item">
+              <h3 class="value-title">Accessibility</h3>
+              <p class="value-desc">Anyone who comes with curiosity and commitment is welcome, regardless of background.</p>
+            </div>
+            <div class="value-item">
+              <h3 class="value-title">Community</h3>
+              <p class="value-desc">The school is a gathering place for Tibetans and friends of Tibet worldwide.</p>
+            </div>
+            <div class="value-item">
+              <h3 class="value-title">Continuity</h3>
+              <p class="value-desc">We train the next generation of artists who will themselves become teachers.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- History Timeline -->
+  <section class="section" style="background: var(--ivory);" aria-labelledby="history-heading">
+    <div class="container">
+      <header class="section-header centered">
+        <p class="section-eyebrow">Our Story</p>
+        <h2 class="section-title" id="history-heading">Fifteen Years of Practice</h2>
+        <div class="section-divider"></div>
+        <p class="section-description">
+          From an informal weekly painting circle to a school with 800 graduates and an
+          internationally recognised gallery.
+        </p>
+      </header>
+
+      <div style="max-width:660px; margin: 0 auto;">
+        <div class="history-timeline">
+          {timeline.map(item => (
+            <div class="timeline-item">
+              <p class="timeline-year">{item.year}</p>
+              <h3 class="timeline-title">{item.title}</h3>
+              <p class="timeline-desc">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Team -->
+  <section class="section" aria-labelledby="team-heading">
+    <div class="container">
+      <header class="section-header centered">
+        <p class="section-eyebrow">Our People</p>
+        <h2 class="section-title" id="team-heading">The Vermillion Arts Team</h2>
+        <div class="section-divider"></div>
+      </header>
+
+      <div class="team-grid">
+        {team.map(member => (
+          <div class="team-card">
+            <div class="team-portrait">
+              <img
+                src={member.image}
+                alt={member.alt}
+                loading="lazy"
+                width="200"
+                height="200"
+              />
+            </div>
+            <h3 class="team-name">{member.name}</h3>
+            <p class="team-role">{member.role}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Partners -->
+  <section class="section-sm" style="background:var(--ivory);" aria-labelledby="partners-heading">
+    <div class="container">
+      <header class="section-header centered" style="margin-bottom:var(--space-xl);">
+        <p class="section-eyebrow">Supporters & Collaborators</p>
+        <h2 class="section-title" id="partners-heading">Partners & Supporters</h2>
+        <div class="section-divider"></div>
+        <p class="section-description">
+          Vermillion Arts is grateful to the institutions and foundations that support
+          our work through funding, collaboration, and advocacy.
+        </p>
+      </header>
+
+      <div class="partners-grid" style="justify-content:center;">
+        {partners.map(p => (
+          <div class="partner-logo">{p}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Stats row -->
+  <section class="section-sm" style="background:var(--midnight);" aria-label="Vermillion Arts statistics">
+    <div class="container">
+      <div style="display:grid; grid-template-columns: repeat(4,1fr); gap:var(--space-xl); text-align:center;">
+        <div>
+          <div class="artist-stat-number" style="font-size:2.5rem; font-family:var(--font-heading); font-weight:900; color:var(--vermillion-light);">800+</div>
+          <div class="artist-stat-label" style="font-family:var(--font-ui); font-size:0.75rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(245,240,232,0.5); margin-top:4px;">Students trained</div>
+        </div>
+        <div>
+          <div class="artist-stat-number" style="font-size:2.5rem; font-family:var(--font-heading); font-weight:900; color:var(--vermillion-light);">15</div>
+          <div class="artist-stat-label" style="font-family:var(--font-ui); font-size:0.75rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(245,240,232,0.5); margin-top:4px;">Years of teaching</div>
+        </div>
+        <div>
+          <div class="artist-stat-number" style="font-size:2.5rem; font-family:var(--font-heading); font-weight:900; color:var(--vermillion-light);">6</div>
+          <div class="artist-stat-label" style="font-family:var(--font-ui); font-size:0.75rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(245,240,232,0.5); margin-top:4px;">Art disciplines taught</div>
+        </div>
+        <div>
+          <div class="artist-stat-number" style="font-size:2.5rem; font-family:var(--font-heading); font-weight:900; color:var(--vermillion-light);">45</div>
+          <div class="artist-stat-label" style="font-family:var(--font-ui); font-size:0.75rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(245,240,232,0.5); margin-top:4px;">Resident artists</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+@media (max-width: 640px) {
+  .stats-row { grid-template-columns: repeat(2,1fr) !important; }
+}
+</style>

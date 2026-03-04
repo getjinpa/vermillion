@@ -1,0 +1,367 @@
+---
+import Base from '../layouts/Base.astro';
+import { withBase } from '../utils/paths';
+---
+
+<Base
+  title="Home"
+  description="Vermillion Arts — Tibetan traditional arts school in Dharamsala. Learn thangka painting, sculpture, calligraphy, and textile arts from master artists."
+>
+
+  <!-- ═══ HERO ═══════════════════════════════════════════════════ -->
+  <section class="hero" aria-label="Welcome to Vermillion Arts">
+    <div class="hero-border-top" aria-hidden="true"></div>
+
+    <!-- Background: Unsplash thangka painting -->
+    <div
+      class="hero-bg-image"
+      style="background-image: url('https://images.unsplash.com/photo-1546611994-e168a6e7e2dd?w=1600&auto=format&fit=crop&q=80');"
+      aria-hidden="true"
+    ></div>
+    <div class="hero-bg-gradient" aria-hidden="true"></div>
+
+    <!-- Decorative ornament -->
+    <div class="hero-ornament" aria-hidden="true">
+      <div class="hero-ornament-ring"></div>
+      <div class="hero-ornament-ring"></div>
+      <div class="hero-ornament-ring"></div>
+    </div>
+
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Dharamsala · Himachal Pradesh · India</p>
+
+        <h1 class="hero-title">
+          The <em>Living Art</em><br />of Tibet
+        </h1>
+
+        <p class="hero-subtitle">
+          Vermillion Arts preserves and transmits the sacred artistic traditions
+          of Tibet — thangka painting, bronze sculpture, calligraphy, and textile
+          art — through rigorous teaching, vibrant exhibition, and an enduring
+          community of practitioners.
+        </p>
+
+        <div class="hero-actions">
+          <a href={withBase('/classes/')} class="btn btn-primary btn-lg">
+            Explore Classes
+          </a>
+          <a href={withBase('/gallery/')} class="btn btn-secondary btn-lg">
+            View Gallery
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-border-bottom" aria-hidden="true"></div>
+
+    <div class="hero-scroll-indicator" aria-hidden="true">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+
+  <!-- ═══ ART FORM SHOWCASE ════════════════════════════════════ -->
+  <section class="section" aria-labelledby="showcase-heading">
+    <div class="container">
+      <header class="section-header centered">
+        <p class="section-eyebrow">Our Art Forms</p>
+        <h2 class="section-title" id="showcase-heading">Traditions Preserved, Skills Alive</h2>
+        <div class="section-divider"></div>
+        <p class="section-description">
+          Each art form taught at Vermillion Arts carries centuries of spiritual meaning and aesthetic
+          mastery. Our master artists guide students from first brushstroke to completed masterwork.
+        </p>
+      </header>
+
+      <div class="art-showcase">
+
+        <!-- Thangka Painting -->
+        <article class="art-card">
+          <img
+            class="art-card-image"
+            src="https://images.unsplash.com/photo-1626544827763-d516dce335e2?w=600&auto=format&fit=crop&q=80"
+            alt="Gold and pigment thangka painting in progress"
+            loading="lazy"
+            width="600"
+            height="800"
+          />
+          <div class="art-card-overlay" aria-hidden="true"></div>
+          <span class="art-card-tag">Sacred Painting</span>
+          <div class="art-card-body">
+            <h3 class="art-card-title">Thangka Painting</h3>
+            <p class="art-card-desc">
+              The luminous tradition of Tibetan scroll painting using natural mineral pigments,
+              gold, and centuries-old techniques to depict Buddhist deities and mandalas.
+            </p>
+            <a href={withBase('/classes/')} class="art-card-link">
+              See classes →
+            </a>
+          </div>
+        </article>
+
+        <!-- Buddhist Sculpture -->
+        <article class="art-card">
+          <img
+            class="art-card-image"
+            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop&q=80"
+            alt="Bronze Buddhist sculpture being cast in workshop"
+            loading="lazy"
+            width="600"
+            height="800"
+          />
+          <div class="art-card-overlay" aria-hidden="true"></div>
+          <span class="art-card-tag">Three-Dimensional Art</span>
+          <div class="art-card-body">
+            <h3 class="art-card-title">Buddhist Sculpture</h3>
+            <p class="art-card-desc">
+              Lost-wax bronze casting and clay modelling traditions from Tibet and Nepal,
+              creating devotional images with precise iconometric proportions.
+            </p>
+            <a href={withBase('/classes/')} class="art-card-link">
+              See classes →
+            </a>
+          </div>
+        </article>
+
+        <!-- Textile Arts -->
+        <article class="art-card">
+          <img
+            class="art-card-image"
+            src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=600&auto=format&fit=crop&q=80"
+            alt="Vibrant Tibetan textile weaving on a traditional loom"
+            loading="lazy"
+            width="600"
+            height="800"
+          />
+          <div class="art-card-overlay" aria-hidden="true"></div>
+          <span class="art-card-tag">Fibre Arts</span>
+          <div class="art-card-body">
+            <h3 class="art-card-title">Textile & Appliqué</h3>
+            <p class="art-card-desc">
+              Traditional Tibetan weaving, silk appliqué thangka, and embroidery —
+              vibrantly coloured textiles with auspicious symbols woven into every thread.
+            </p>
+            <a href={withBase('/classes/')} class="art-card-link">
+              See classes →
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ PROGRAMS TEASER ══════════════════════════════════════ -->
+  <section class="section" style="background: var(--ivory);" aria-labelledby="programs-heading">
+    <div class="container">
+      <header class="section-header centered">
+        <p class="section-eyebrow">Current Programs</p>
+        <h2 class="section-title" id="programs-heading">Classes for Every Level</h2>
+        <div class="section-divider"></div>
+        <p class="section-description">
+          From weekend introductions to year-long intensive study, Vermillion Arts offers
+          structured learning paths for students at every stage of their artistic journey.
+        </p>
+      </header>
+
+      <div class="programs-grid">
+
+        <article class="program-card">
+          <div class="program-icon" aria-hidden="true">🖌️</div>
+          <h3 class="program-card-title">Thangka Painting — Intro</h3>
+          <p class="program-card-desc">
+            Learn the foundational techniques of Tibetan scroll painting: sketching proportions,
+            preparing canvas, mixing mineral pigments, and applying flat washes of colour.
+          </p>
+          <p class="program-card-meta">Beginners · 8 weeks · ₹14,000</p>
+        </article>
+
+        <article class="program-card">
+          <div class="program-icon" aria-hidden="true">🏺</div>
+          <h3 class="program-card-title">Buddhist Sculpture</h3>
+          <p class="program-card-desc">
+            Explore the lost-wax casting process from clay model to polished bronze. Study
+            iconometric measurement and traditional finishing techniques.
+          </p>
+          <p class="program-card-meta">All levels · 10 weeks · ₹18,000</p>
+        </article>
+
+        <article class="program-card">
+          <div class="program-icon" aria-hidden="true">✒️</div>
+          <h3 class="program-card-title">Tibetan Calligraphy</h3>
+          <p class="program-card-desc">
+            Master the Uchen and Umé scripts using traditional bamboo pens and handmade ink.
+            Produce prayers, poetry, and sacred texts with flowing elegance.
+          </p>
+          <p class="program-card-meta">Beginners · 6 weeks · ₹9,500</p>
+        </article>
+
+        <article class="program-card">
+          <div class="program-icon" aria-hidden="true">🧵</div>
+          <h3 class="program-card-title">Traditional Weaving</h3>
+          <p class="program-card-desc">
+            Sit at a back-strap loom and learn to weave the geometric patterns of Tibetan
+            khata, aprons, and decorative fabric using natural-dyed wool.
+          </p>
+          <p class="program-card-meta">Beginners · 8 weeks · ₹11,000</p>
+        </article>
+
+      </div>
+
+      <div style="text-align:center; margin-top: var(--space-2xl);">
+        <a href={withBase('/classes/')} class="btn btn-outline">
+          View All Classes & Workshops
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ FEATURED ARTIST ══════════════════════════════════════ -->
+  <section class="featured-artist-section" aria-labelledby="featured-artist-heading">
+    <div class="container">
+      <div class="featured-artist-inner">
+
+        <!-- Portrait -->
+        <div class="featured-artist-portrait">
+          <img
+            src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=700&auto=format&fit=crop&q=80"
+            alt="Tenzin Norbu, master thangka painter at Vermillion Arts"
+            width="700"
+            height="875"
+          />
+          <div class="featured-artist-frame" aria-hidden="true"></div>
+          <div class="featured-artist-accent" aria-hidden="true"></div>
+          <div class="featured-artist-quote">
+            <p>"A thangka is not painted — it is revealed. The pigments simply uncover what was always there."</p>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="featured-artist-content">
+          <header class="section-header">
+            <p class="section-eyebrow no-lines">Featured Artist</p>
+            <div class="section-divider"></div>
+          </header>
+
+          <h2 class="featured-artist-name" id="featured-artist-heading">Tenzin Norbu</h2>
+          <p class="featured-artist-specialty">Master Thangka Painter · Karma Gadri Lineage</p>
+
+          <p class="featured-artist-bio">
+            Born in Lhasa in 1962 and trained from age nine under the tutelage of his uncle — a
+            renowned monk-painter in Drepung Monastery — Tenzin Norbu is one of the foremost
+            living practitioners of the Karma Gadri thangka tradition. He arrived in Dharamsala
+            in 1987 and co-founded Vermillion Arts in 2008 with the conviction that traditional
+            Tibetan arts should remain a living practice, not a museum artefact.
+          </p>
+
+          <p class="featured-artist-bio">
+            Tenzin's thangkas have been exhibited in London, New York, Tokyo, and Brussels,
+            and form part of permanent collections at the Rubin Museum of Art and the Tibet
+            Heritage Fund. He teaches the advanced thangka programme at Vermillion Arts and
+            accepts private students by application.
+          </p>
+
+          <div class="featured-artist-stats">
+            <div class="artist-stat">
+              <span class="artist-stat-number">35+</span>
+              <span class="artist-stat-label">Years of practice</span>
+            </div>
+            <div class="artist-stat">
+              <span class="artist-stat-number">400+</span>
+              <span class="artist-stat-label">Thangkas completed</span>
+            </div>
+            <div class="artist-stat">
+              <span class="artist-stat-number">12</span>
+              <span class="artist-stat-label">Countries exhibited</span>
+            </div>
+          </div>
+
+          <a href={withBase('/artists/')} class="btn btn-primary">
+            Meet All Artists
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ EXHIBITION BANNER ════════════════════════════════════ -->
+  <section class="exhibition-banner" aria-labelledby="exhibition-heading">
+    <div class="container">
+      <div class="exhibition-inner">
+        <div>
+          <p class="exhibition-label">
+            <span class="exhibition-dot" aria-hidden="true"></span>
+            Now Showing
+          </p>
+          <h2 class="exhibition-title" id="exhibition-heading">
+            Mandala: Sacred Geometries of the Cosmos
+          </h2>
+          <p class="exhibition-dates">
+            12 February – 30 April 2026 &nbsp;·&nbsp; Vermillion Gallery, Dharamsala
+          </p>
+        </div>
+        <a href={withBase('/gallery/')} class="btn btn-gold btn-lg">
+          View Exhibition
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ COMMUNITY SECTION ════════════════════════════════════ -->
+  <section class="section" aria-labelledby="community-heading">
+    <div class="container">
+      <header class="section-header centered">
+        <p class="section-eyebrow">Our Community</p>
+        <h2 class="section-title" id="community-heading">More than a School</h2>
+        <div class="section-divider"></div>
+        <p class="section-description">
+          Vermillion Arts is a gathering place for everyone who loves Tibetan culture —
+          students, artists, researchers, and curious visitors from around the world.
+        </p>
+      </header>
+
+      <div class="community-grid">
+
+        <article class="community-card">
+          <span class="community-icon" aria-hidden="true">🎨</span>
+          <h3 class="community-card-title">Open Studios</h3>
+          <p class="community-card-desc">
+            Every Saturday, our studios are open to visitors, practitioners, and curious
+            passers-by. Watch artists at work, ask questions, and pick up a brush yourself.
+          </p>
+        </article>
+
+        <article class="community-card">
+          <span class="community-icon" aria-hidden="true">📚</span>
+          <h3 class="community-card-title">Research Library</h3>
+          <p class="community-card-desc">
+            Our archive holds over 2,000 volumes on Tibetan art, iconography, and cultural
+            history, plus rare photographs and pattern books accessible to enrolled students.
+          </p>
+        </article>
+
+        <article class="community-card">
+          <span class="community-icon" aria-hidden="true">🌐</span>
+          <h3 class="community-card-title">Artist Residencies</h3>
+          <p class="community-card-desc">
+            International artists join our two-month residency programme each spring and
+            autumn, bringing cross-cultural dialogue and fresh perspectives to Tibetan art.
+          </p>
+        </article>
+
+      </div>
+
+      <div style="text-align:center; margin-top:var(--space-2xl);">
+        <a href={withBase('/about/')} class="btn btn-ghost">Learn About Our Mission</a>
+      </div>
+    </div>
+  </section>
+
+</Base>

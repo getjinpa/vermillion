@@ -1,0 +1,31 @@
+{
+  "demo": true,
+  "demoMessage": "Sample template — Vermillion Arts is a fictional cultural organisation",
+  "site": {
+    "title": "Vermillion Arts",
+    "description": "Tibetan traditional arts school and cultural center — preserving and sharing the living art traditions of Tibet through teaching, exhibition, and community.",
+    "url": "https://username.github.io",
+    "basePath": "",
+    "language": "en"
+  },
+  "navigation": {
+    "main": [
+      { "label": "Home",    "url": "/" },
+      { "label": "Gallery", "url": "/gallery/" },
+      { "label": "Classes", "url": "/classes/" },
+      { "label": "Artists", "url": "/artists/" },
+      { "label": "About",   "url": "/about/" },
+      { "label": "Contact", "url": "/contact/" }
+    ]
+  },
+  "contact": {
+    "address": "Jogiwara Road, McLeod Ganj, Dharamsala 176219, HP, India",
+    "email": "hello@vermillionarts.org",
+    "phone": "+91 1892 221345"
+  },
+  "seo": {
+    "titleTemplate": "%s — Vermillion Arts",
+    "ogImage": ""
+  },
+  "jinpaKey": ""
+}

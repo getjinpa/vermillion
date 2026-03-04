@@ -1,0 +1,139 @@
+---
+import { withBase, stripBase } from '../../utils/paths';
+
+interface Props { siteConfig: any; }
+const { siteConfig } = Astro.props;
+
+const nav = (siteConfig.navigation?.main ?? []) as Array<{ label: string; url: string }>;
+const currentPath = stripBase(Astro.url.pathname);
+---
+
+<header class="site-header" role="banner">
+  <div class="header-accent-stripe" aria-hidden="true"></div>
+  <div class="container">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a href={withBase('/')} class="site-logo" aria-label="Vermillion Arts — home">
+        <div class="site-logo-mark" aria-hidden="true">V</div>
+        <div>
+          <span class="site-logo-text">Vermillion Arts</span>
+          <span class="site-logo-sub">Dharamsala, India</span>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="main-nav" aria-label="Main navigation">
+        {nav.map(item => {
+          const href = withBase(item.url);
+          const isActive = currentPath === item.url || (item.url !== '/' && currentPath.startsWith(item.url));
+          return (
+            <a
+              href={href}
+              class={`nav-link${isActive ? ' active' : ''}${item.label === 'Contact' ? ' nav-cta' : ''}`}
+              aria-current={isActive ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          );
+        })}
+      </nav>
+
+      <!-- Hamburger -->
+      <button
+        class="hamburger"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        id="hamburger-btn"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </div>
+</header>
+
+<!-- Mobile nav overlay -->
+<nav
+  class="mobile-nav"
+  id="mobile-nav"
+  aria-label="Mobile navigation"
+  role="dialog"
+  aria-modal="true"
+  aria-hidden="true"
+>
+  <div class="mobile-nav-header">
+    <a href={withBase('/')} class="site-logo" aria-label="Vermillion Arts — home" id="mobile-logo-link">
+      <div class="site-logo-mark" aria-hidden="true">V</div>
+      <div>
+        <span class="site-logo-text">Vermillion Arts</span>
+        <span class="site-logo-sub">Dharamsala, India</span>
+      </div>
+    </a>
+    <button class="mobile-nav-close" aria-label="Close navigation menu" id="close-nav-btn">✕</button>
+  </div>
+
+  <div class="mobile-nav-links">
+    {nav.map(item => {
+      const href = withBase(item.url);
+      const isActive = currentPath === item.url || (item.url !== '/' && currentPath.startsWith(item.url));
+      return (
+        <a
+          href={href}
+          class="mobile-nav-link"
+          aria-current={isActive ? 'page' : undefined}
+        >
+          {item.label}
+        </a>
+      );
+    })}
+  </div>
+
+  <div class="mobile-nav-footer">
+    <p class="mobile-nav-contact">
+      {siteConfig.contact?.email}<br />
+      {siteConfig.contact?.phone}<br />
+      {siteConfig.contact?.address}
+    </p>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById('hamburger-btn');
+  const nav = document.getElementById('mobile-nav');
+  const closeBtn = document.getElementById('close-nav-btn');
+
+  function openNav() {
+    nav?.classList.add('is-open');
+    btn?.setAttribute('aria-expanded', 'true');
+    nav?.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeBtn?.focus();
+  }
+
+  function closeNav() {
+    nav?.classList.remove('is-open');
+    btn?.setAttribute('aria-expanded', 'false');
+    nav?.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    btn?.focus();
+  }
+
+  btn?.addEventListener('click', openNav);
+  closeBtn?.addEventListener('click', closeNav);
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav?.classList.contains('is-open')) {
+      closeNav();
+    }
+  });
+
+  // Close on nav link click
+  nav?.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', closeNav);
+  });
+</script>
