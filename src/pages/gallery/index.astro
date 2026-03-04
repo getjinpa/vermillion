@@ -154,24 +154,45 @@ const categories = ["All", "Thangka", "Sculpture", "Textile", "Calligraphy"];
       <div class="gallery-grid" role="list" aria-label="Artwork grid">
         {artworks.map(work => (
           <article class="gallery-item" role="listitem">
-            <img
-              class="gallery-item-image"
-              src={work.image}
-              alt={work.alt}
-              loading="lazy"
-              width="600"
-              height="600"
-            />
-            <div class="gallery-item-overlay" aria-hidden="true"></div>
-            <div class="gallery-item-info">
-              <p class="gallery-item-category">
-                <span class={`tag-badge ${work.tag}`}>{work.category}</span>
-              </p>
-              <h3 class="gallery-item-title">{work.title}</h3>
-              <p class="gallery-item-artist">{work.artist}</p>
-            </div>
+            <button
+              class="gallery-item-btn"
+              aria-label={`View: ${work.title} by ${work.artist}`}
+              data-lightbox-src={work.image}
+              data-lightbox-title={work.title}
+              data-lightbox-artist={work.artist}
+            >
+              <img
+                class="gallery-item-image"
+                src={work.image}
+                alt={work.alt}
+                loading="lazy"
+                width="600"
+                height="600"
+              />
+              <div class="gallery-item-overlay" aria-hidden="true"></div>
+              <div class="gallery-item-info">
+                <p class="gallery-item-category">
+                  <span class={`tag-badge ${work.tag}`}>{work.category}</span>
+                </p>
+                <h3 class="gallery-item-title">{work.title}</h3>
+                <p class="gallery-item-artist">{work.artist}</p>
+              </div>
+            </button>
           </article>
         ))}
+      </div>
+
+      <!-- Lightbox -->
+      <div id="gallery-lightbox" class="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Artwork viewer" hidden>
+        <button class="gallery-lightbox__close" id="lightbox-close" aria-label="Close viewer">✕</button>
+        <div class="gallery-lightbox__backdrop" id="lightbox-backdrop"></div>
+        <div class="gallery-lightbox__content">
+          <img id="lightbox-img" src="" alt="" class="gallery-lightbox__img" />
+          <div class="gallery-lightbox__caption">
+            <p id="lightbox-title" class="gallery-lightbox__title"></p>
+            <p id="lightbox-artist" class="gallery-lightbox__artist"></p>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -195,6 +216,126 @@ const categories = ["All", "Thangka", "Sculpture", "Textile", "Calligraphy"];
   </section>
 
 </Base>
+
+
+<style>
+  .gallery-item-btn {
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+  }
+  .gallery-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  .gallery-lightbox[hidden] { display: none; }
+  .gallery-lightbox__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+  }
+  .gallery-lightbox__content {
+    position: relative;
+    z-index: 1;
+    max-width: min(90vw, 800px);
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .gallery-lightbox__img {
+    max-width: 100%;
+    max-height: 75vh;
+    object-fit: contain;
+    border-radius: 4px;
+    display: block;
+  }
+  .gallery-lightbox__caption {
+    text-align: center;
+    color: #fff;
+  }
+  .gallery-lightbox__title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.25rem;
+  }
+  .gallery-lightbox__artist {
+    font-size: 0.875rem;
+    opacity: 0.75;
+    margin: 0;
+  }
+  .gallery-lightbox__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2;
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: #fff;
+    font-size: 1.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+  .gallery-lightbox__close:hover { background: rgba(255,255,255,0.3); }
+</style>
+
+<script is:inline>
+  (function () {
+    var lightbox = document.getElementById("gallery-lightbox");
+    var lbImg = document.getElementById("lightbox-img");
+    var lbTitle = document.getElementById("lightbox-title");
+    var lbArtist = document.getElementById("lightbox-artist");
+    var lbClose = document.getElementById("lightbox-close");
+    var lbBackdrop = document.getElementById("lightbox-backdrop");
+
+    function openLightbox(src, title, artist) {
+      lbImg.src = src;
+      lbImg.alt = title;
+      lbTitle.textContent = title;
+      lbArtist.textContent = artist;
+      lightbox.removeAttribute("hidden");
+      document.body.style.overflow = "hidden";
+      lbClose.focus();
+    }
+    function closeLightbox() {
+      lightbox.setAttribute("hidden", "");
+      document.body.style.overflow = "";
+    }
+
+    document.querySelectorAll("[data-lightbox-src]").forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        openLightbox(
+          btn.getAttribute("data-lightbox-src"),
+          btn.getAttribute("data-lightbox-title"),
+          btn.getAttribute("data-lightbox-artist")
+        );
+      });
+    });
+
+    lbClose && lbClose.addEventListener("click", closeLightbox);
+    lbBackdrop && lbBackdrop.addEventListener("click", closeLightbox);
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape" && !lightbox.hasAttribute("hidden")) closeLightbox();
+    });
+  })();
+</script>
 
 <style>
   .visually-hidden {

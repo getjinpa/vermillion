@@ -99,111 +99,17 @@ import { withBase } from '../../utils/paths';
 
         </aside>
 
-        <!-- Right: form -->
+        <!-- Right: contact -->
         <div>
-          <form class="contact-form" method="POST" action="#" novalidate aria-label="Contact form">
-            <h3 class="form-title">Send Us a Message</h3>
-            <p class="form-subtitle">
-              Whether you'd like to enrol in a class, enquire about a commission, or simply say
-              hello — we'd love to hear from you.
+          <div style="background:var(--ivory);border:1px solid var(--color-border);border-radius:12px;padding:2.5rem;">
+            <h3 style="color:var(--vermillion);font-size:1.3rem;margin-bottom:1rem;">Send a Message</h3>
+            <p style="color:var(--color-muted, #666);line-height:1.8;margin-bottom:1.5rem;">
+              For class enquiries, gallery visits, commission requests, and residency applications, please email us directly. We aim to reply within two working days.
             </p>
-
-            <div class="form-row">
-              <div class="form-group" style="margin-bottom:0;">
-                <label for="first-name">First Name <span aria-hidden="true" style="color:var(--vermillion);">*</span></label>
-                <input
-                  type="text"
-                  id="first-name"
-                  name="first_name"
-                  autocomplete="given-name"
-                  required
-                  placeholder="Tenzin"
-                />
-              </div>
-              <div class="form-group" style="margin-bottom:0;">
-                <label for="last-name">Last Name <span aria-hidden="true" style="color:var(--vermillion);">*</span></label>
-                <input
-                  type="text"
-                  id="last-name"
-                  name="last_name"
-                  autocomplete="family-name"
-                  required
-                  placeholder="Dorje"
-                />
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="email">Email Address <span aria-hidden="true" style="color:var(--vermillion);">*</span></label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                autocomplete="email"
-                required
-                placeholder="tenzin@example.com"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="phone">Phone / WhatsApp (optional)</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                autocomplete="tel"
-                placeholder="+91 98765 43210"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="subject">Subject <span aria-hidden="true" style="color:var(--vermillion);">*</span></label>
-              <select id="subject" name="subject" required>
-                <option value="" disabled selected>Select a topic…</option>
-                <option value="class-enquiry">Class Enrolment Enquiry</option>
-                <option value="workshop">Workshop Booking</option>
-                <option value="commission">Commission Enquiry</option>
-                <option value="residency">Artist Residency Application</option>
-                <option value="gallery">Gallery / Exhibition</option>
-                <option value="press">Press & Media</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="message">Message <span aria-hidden="true" style="color:var(--vermillion);">*</span></label>
-              <textarea
-                id="message"
-                name="message"
-                required
-                placeholder="Tell us what brings you to Vermillion Arts, which class or programme you're interested in, and anything else that would help us respond helpfully…"
-                rows="6"
-              ></textarea>
-            </div>
-
-            <div class="form-group" style="margin-bottom:var(--space-xl);">
-              <label for="how-heard" style="text-transform:none; font-size:0.82rem; letter-spacing:0; font-weight:600; color:var(--muted);">
-                How did you hear about us? (optional)
-              </label>
-              <select id="how-heard" name="how_heard">
-                <option value="" selected>Choose an option…</option>
-                <option>Word of mouth</option>
-                <option>Search engine</option>
-                <option>Social media</option>
-                <option>Travel guidebook</option>
-                <option>Library of Tibetan Works & Archives</option>
-                <option>Other</option>
-              </select>
-            </div>
-
-            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
-              Send Message
-            </button>
-
-            <p style="font-size:0.78rem; color:var(--muted-light); text-align:center; margin-top:var(--space-md); max-width:none;">
-              We aim to reply within 2 working days. For urgent queries, please call us directly.
-            </p>
-          </form>
+            <a href="mailto:hello@vermillion-arts.org" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:0.5rem;">
+              hello@vermillion-arts.org
+            </a>
+          </div>
         </div>
 
       </div>
